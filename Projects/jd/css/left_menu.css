@@ -1,0 +1,42 @@
+.left_menu{
+    list-style-type: none;
+    position: relative;
+    width:  190px;
+    height: 480px;
+    padding: 10px 0px;
+}
+.left_menu>ul{
+    display: flex;
+    font-size: 14px;
+}
+.left_menu>li{
+    padding-left: 18px;
+    font-size: 12px;
+    width: 172px;
+    flex: 1;
+    justify-content: center;
+    height: 21px;
+}
+.left_menu>li:hover{
+    background-color: #d9d9d9;
+}
+
+.hidden {  
+    display: none; 
+}  
+    
+.visible {  
+    display: block; 
+}
+.left_menu  .submenu {
+    width: 850px;
+    height: 480px;
+    z-index: 99;
+    position: absolute;
+    left: 100%;
+    top: 0px;
+    border: 2px solid #d9d9d9;
+    background-color: #fff;
+    word-wrap: break-word; 
+    word-break: normal;
+}

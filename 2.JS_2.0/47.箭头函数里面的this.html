@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //指向obj
+        const obj = {
+            name: 'andy',
+            sayHi: function () {
+                console.log(this);
+            }
+        }
+        console.log(obj.sayHi());
+
+        //指向window （直接指向它父亲的this）
+        const obj2 = {
+            name: 'pink老师',
+            sayHi:  () => {
+                console.log(this);
+            }
+        }
+        console.log(obj2.sayHi());
+    </script>
+</body>
+</html>

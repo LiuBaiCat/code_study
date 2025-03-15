@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生就业统计表</title>
+    <style>
+        body{
+            text-align: center;
+            outline: 0;
+        }
+        form{
+            margin: 30px;
+        }
+        input,select{
+            width: 100px;
+            height: 30px;
+        }
+        input{
+            border: 1px solid rgb(79,79,79);
+            padding: 0;  
+            border-radius: 5%;
+            box-sizing: border-box; /* 让元素的宽度和高度包括边框和内边距 */  
+        }
+        .add{
+            width: 60px;
+            height: 30px;
+            background-color: #72bed0;
+            border-radius: 5%;
+            border: #8ebbc0 1px solid;
+            color: white;
+            cursor: pointer;
+        }
+        *:focus { 
+            outline: 0;
+       }
+       .title {  
+            display: flex;
+            justify-content: flex-end;  /* 子项靠右对齐 */  
+            align-items: center;  /* 子项垂直居中 */  
+            margin: auto;  
+            width: 900px;  
+            height: 50px;  
+            padding-right: 20px;
+            background-color: #f2f2f2;  
+            margin-bottom: 10px;
+        }
+        table{
+            margin: auto;
+            width: 920px;
+            text-align: center;
+        }
+        table,th,td{
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+        caption{
+            font-style: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        tr{
+            height: 40px;
+            /* cursor: pointer; */
+        }
+        th{
+            background-color: #f2f2f2;
+        }
+
+        .delete{
+            display: block;
+            width: 40px;
+            height: 24px;
+            margin: auto;
+            background-color: #eb6b3c;
+            color: #fff;
+            border: #c4755b 1px solid;
+            border-radius: 5%;
+            cursor: pointer;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>学生就业统计表</h1>
+    <form class="info" autocomplete="off">
+        <input type="text" class="uname" name="uname" placeholder="姓名">
+        <input type="text" class="age" name="age" placeholder="年龄">
+        <input type="text" class="salary" name="salary" placeholder="薪资">
+        <select name="gender" class="gender">
+            <option value="性别">性别</option>
+            <option value="男">男</option>  
+            <option value="女">女</option> 
+        </select>
+        <select name="city" class="city">
+            <option value="城市">城市</option>  
+            <option value="北京">北京</option>  
+            <option value="上海">上海</option>  
+            <option value="重庆">重庆</option>  
+            <option value="成都">成都</option>
+        </select>
+        <button class="add">添加</button>
+    </form>
+    <div class="title">共有数据&nbsp;<span>0</span>&nbsp;条</div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>薪资</th>
+                <th>就业城市</th>
+                <th>录入时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td><a class="delete">删除</a></td>
+            </tr> -->
+        </tbody>
+    </table>
+    <script>
+        const initData = [
+            {
+                stuId: 1,
+                uname: '迪丽热巴',
+                age: 22,
+                gender: '女',
+                salary: '12000',
+                city: '北京',
+                time: '2099/9/9 08:08:08'
+            }
+        ]
+        // localStorage.setItem('data',JSON.stringify(initData));
+
+        const arr = JSON.parse(localStorage.getItem('data')) || [];
+
+        // console.log(arr);
+
+        const tbody = document.querySelector('tbody');
+
+        function render(){
+            //利用map遍历数组，返回对应tr的数组
+            
+            const trArr = arr.map(function(ele,index){
+                return `
+                <tr>
+                <td>${ele.stuId}</td>
+                <td>${ele.uname}</td>
+                <td>${ele.age}</td>
+                <td>${ele.gender}</td>
+                <td>${ele.salary}</td>
+                <td>${ele.city}</td>
+                <td>${ele.time}</td>
+                <td><a class="delete" data-id="${index}">删除</a></td>
+            </tr>
+                `;
+            });
+
+            // console.log(trArr);
+
+            tbody.innerHTML = trArr.join('');
+
+            const span = document.querySelector('.title span');
+            span.innerHTML = arr.length;
+        }
+        render();
+
+        const info = document.querySelector('.info');
+        const uname = document.querySelector('.uname');
+        const age = document.querySelector('.age');
+        const gender = document.querySelector('.gender');
+        const salary = document.querySelector('.salary');
+        const city = document.querySelector('.city');
+
+        info.addEventListener('submit',function(e){
+            e.preventDefault();
+            if(!uname.value || !age.value || !salary.value || gender.value === '性别' || city.value === '城市'){
+                return alert('输入内容不能为空');
+            }
+
+
+            if(!(/^\d+$/.test(age.value)) || !(/^\d+$/.test(salary.value))) {  
+                return alert('‘年龄’或‘薪资’请输入纯数字');
+            }
+
+            if(/^\d+$/.test(uname.value)) {  
+                return alert('‘名字’请输入纯汉字或英文字符');
+            }
+
+            // 正则表达式  /^\d+$/  的解释：
+            // ^ 表示字符串的开始。
+            // \d+ 表示一个或多个数字（\d是数字的意思，+表示一个或多个）。
+            // $ 表示字符串的结束。
+
+            arr.push({
+                stuId: arr.length ? arr[arr.length - 1].stuId + 1 : 1,
+                uname: uname.value,
+                age: age.value,
+                gender: gender.value,
+                salary: salary.value,
+                city: city.value,
+                time: new Date().toLocaleString()
+            });
+            render();
+            this.reset();   //重置表单
+
+            localStorage.setItem('data',JSON.stringify(arr));
+        });
+
+
+        tbody.addEventListener('click',function(e){
+            //判断是否点击的是删除按钮
+            if(e.target.tagName === 'A'){
+                // alert('test');
+                // console.log(e.target.dataset.id);
+
+                if(confirm('您确定要删除这条数据嘛？（删除后无法进行恢复！！）')){
+
+                    if(confirm('再次确定您是否要删除？')){
+                    arr.splice(e.target.dataset.id,1);
+
+                    render();
+
+                    localStorage.setItem('data',JSON.stringify(arr));
+                    }
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>

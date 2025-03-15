@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style: none;
+            /* width: 20px; */
+            display: inline-block;
+            /* height: 20px; */
+            color: #333;
+        }
+        li:nth-child(2n+1) {  
+            background-color: rgb(200, 255, 0);  
+        } 
+        li:nth-child(2n) {  
+            background-color: yellowgreen;  
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <!-- 空的 -->
+    </ul>
+    <script>
+        let data = [
+            {
+                title:'电工基础',
+                name:'袁涛',
+                classname:'2023软件1班'
+            },
+            {
+                title:'大学心理健康教育',
+                name:'方杨清',
+                classname:'2023软件1班'
+            },
+            {
+                title:'思想道德与法治&nbsp;在线开...',
+                name:'唐咏春',
+                classname:'2023软件1班'
+            },
+            {
+                title:'计算机应用基础',
+                name:'易欣',
+                classname:'2023软件1班'
+            },
+            {
+                title:'Web客户端编程（Web前...',
+                name:'史小春',
+                classname:'2023软件1班'
+            },
+            {
+                title:'大学英语',
+                name:'何玥',
+                classname:'2023软件1班'
+            }];
+        const ul = document.querySelector('ul');
+        for (let i = 0; i < data.length; i++) {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                    <p>${data[i].title}<p>
+                    <p>${data[i].name}</p>
+                    <p>${data[i].classname}</p>
+            `
+            ul.appendChild(li);
+        }
+    </script>
+</body>
+</html>

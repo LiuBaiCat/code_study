@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const obj = {
+        //     uname: 'pink老师',
+        //     age:18
+        // }
+
+        // const {uname,age} = {uname: 'pink老师',age:18};
+        // console.log(uname);
+        // console.log(age);
+
+        // const {uname:username,age} = {uname: 'pink老师',age:18};
+        // console.log(username);
+        // console.log(age);
+
+
+        
+        //解构数组对象
+        const pig = [
+            {
+                uname: '佩奇',
+                age: 6
+            }
+        ]
+        const [{uname,age}] = pig;
+        console.log(uname);
+        console.log(age);
+    </script>
+</body>
+</html>

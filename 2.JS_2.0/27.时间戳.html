@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: inline-block;
+            /* width: 300px; */
+            height: 40px;
+            border: 1px solid pink;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        const div = document.querySelector('div');
+        function MyTime() {
+            
+            // // 01. getTime()
+            // const date = new Date();
+            // const time1 = date.getTime();
+            // div.innerHTML = time1;
+
+            //#########################################
+
+            // // 02. +new Date()
+            // let time2 = +new Date();
+            // div.innerHTML = time2;
+
+            //#########################################
+
+            // // 03. Date.now()
+            // let time3 = Date.now();
+            // div.innerHTML = time3;
+
+            //此方法只能得到当前的时间戳，
+            //但前面两种可以返回指定时间的时间戳
+            const date = new Date();
+            const ToTime = +new Date('2022-4-1 18:30:00');
+            const NowTime = date.getTime();
+            div.innerHTML = ToTime - NowTime;
+        }
+        MyTime();
+        setInterval(MyTime,1000);
+        
+    </script>
+</body>
+</html>

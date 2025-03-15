@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>手绘时钟</title>
+	</head>
+	<body>
+		<h1>手绘时钟</h1>
+		<hr />
+		<div class="clock">
+			<canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
+				你的浏览器不支持Canvas
+			</canvas>
+		</div>
+		<script>
+			let canvas = document.getElementById("myCanvas");
+			let context = canvas.getContext("2d");
+
+			// 移动原点坐标
+			context.translate(200, 200);
+			// 将坐标轴逆时针旋转90°
+			context.rotate(-Math.PI / 2);
+
+			context.save();
+
+			// 设置线条末端为圆角  
+			context.lineCap = 'round';
+
+			function Newdraw() {
+				context.clearRect(-200, -200, 400, 400);
+				context.save();
+				drawClock();
+				// 获取时间
+				let date = new Date();
+				let hour = date.getHours();
+				let minute = date.getMinutes();
+				let second = date.getSeconds();
+				drawHour(hour);
+				drawMinute(minute);
+				drawSecond(second);
+				drawPoint();
+			}
+			setInterval(Newdraw, 1000);
+
+			function drawClock() {
+				// 表盘绘制
+				context.beginPath();
+				context.arc(0, 0, 180, 0, 2 * Math.PI);
+				context.lineWidth = 10;
+				context.strokeStyle = "darkgrey";
+				context.stroke();
+				context.closePath();
+
+				context.save();
+				context.restore();
+
+				// 表盘刻度绘制
+				for (let i = 0; i < 60; i++) {
+					context.rotate(Math.PI / 30);
+					context.beginPath();
+					if ((i + 1) % 5 == 0) {
+						context.moveTo(140, 0);
+						context.lineTo(165, 0);
+					} else {
+						context.moveTo(155, 0);
+						context.lineTo(165, 0);
+					}
+					context.lineWidth = 5;
+					context.strokeStyle = "black";
+					context.stroke();
+					context.closePath();
+				}
+
+				context.save();
+				context.restore();
+			}
+
+			// 绘制时针
+			function drawHour(hour) {
+				context.beginPath();
+				context.rotate(2 * Math.PI / 12 * hour);
+				context.moveTo(-15, 0);
+				context.lineTo(120, 0);
+				context.lineWidth = 15;
+				context.strokeStyle = "black";
+				context.stroke();
+				context.closePath();
+				context.restore();
+				context.save();
+			}
+
+			// 绘制分针
+			function drawMinute(minute) {
+				context.beginPath();
+				context.rotate(2 * Math.PI / 60 * minute);
+				context.moveTo(-20, 0);
+				context.lineTo(150, 0);
+				context.lineWidth = 10;
+				context.strokeStyle = "black";
+				context.stroke();
+				context.closePath();
+				context.restore();
+				context.save();
+			}
+
+			// 绘制秒针
+			function drawSecond(second) {
+				context.beginPath();
+				context.rotate(2 * Math.PI / 60 * second);
+				context.moveTo(-30, 0);
+				context.lineTo(165, 0);
+				context.lineWidth = 5;
+				context.strokeStyle = "red";
+				context.stroke();
+				context.closePath();
+				context.restore();
+				context.save();
+			}
+			// 绘制表盘中心点
+			function drawPoint() {
+				context.beginPath();
+				context.arc(0, 0, 10, 0, 2 * Math.PI);
+				context.fillStyle = "red";
+				context.fill();
+				context.closePath();
+				// context.restore();
+				// context.save();
+			}
+		</script>
+	</body>
+</html>

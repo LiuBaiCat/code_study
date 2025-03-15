@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            /* text-decoration: none; */
+            color: rgba(0, 0, 255, 0.647);
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- <a href="http://www.baidu.com">
+            支付成功！将在<span>5</span>秒之后自动跳转首页<br>
+            (若网页未跳转，可点击文字直接跳转)
+        </a> -->
+
+        <!-- <form action="" method="get">
+            <input type="text" name="username">
+            <input type="password" name="password">
+            <button>提交</button>
+        </form>
+
+        <a href="#/my">我的</a>
+        <a href="#/friend">朋友</a>
+        <a href="#/download">下载</a> -->
+
+        <button class="reload">刷新</button>
+    </div>
+    <script>
+        //########  2. location.href（获取完整的URL地址）  ##############
+        // console.log(window.location);
+        // console.log(location);
+        // console.log(location.href);
+        // location.href = 'http://www.baidu.com';
+
+        // const a = document.querySelector('a');
+        // let num = 5;
+        // let timer = setInterval(function() {
+        //     num--;
+        //     a.innerHTML = `支付成功！将在<span>${num}</span>秒之后自动跳转首页<br>
+        //     (若网页未跳转，可点击文字直接跳转)`;
+        //     if (num === 0) {
+        //         clearInterval(timer);
+        //         location.href = 'http://www.baidu.com';
+        //     }
+        // },1000)
+
+        //########  2. location.search（获取 ? 后面内容）###########
+        // console.log(location.hash);
+
+        //########  3. location.hash（获取 # 后面内容）  ############
+        // console.log(location.hash);
+
+        //############    4. reload 刷新页面    #################
+        const reload = document.querySelector('.reload');
+        reload.addEventListener('click',function(){
+            location.reload();
+            // location.reload(true);强制刷新 == Ctrl + F5
+        })
+    </script>
+</body>
+</html>

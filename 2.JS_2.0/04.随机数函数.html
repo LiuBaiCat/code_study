@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //0~10 之间随机整数
+        console.log(Math.floor(Math.random() * 11));
+        //5~10 之间的随机数
+        console.log(Math.floor(Math.random() * (5+1)) + 5);
+        //M~N
+        let M = 5,N = 10;
+        console.log(Math.floor(Math.random() * (N - M + 1)) + M);
+
+        let arr = ['red','green','blue'];
+        let random = Math.floor(Math.random() * arr.length);
+        console.log(arr[random]);
+    </script>
+</body>
+</html>

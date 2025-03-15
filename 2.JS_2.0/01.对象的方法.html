@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            uname: '蔡徐坤',
+            saying: '你干嘛，哎哟',
+            hobby:function () {
+                console.log('唱');
+                console.log('跳');
+                console.log('Rap');
+                console.log('篮球');
+            }
+        }
+        // obj.hobby();
+        //obj.uname ==== obj['uname']
+        for(let E in obj){
+            console.log(E);
+        }
+        for (let E in obj){
+            console.log(obj[E]);
+        }
+    </script>
+
+</body>
+</html>

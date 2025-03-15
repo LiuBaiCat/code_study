@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>LiuBianXing</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html {
+				overflow: hidden;
+				min-width: 1200px;
+			}
+
+			.line {
+				display: flex;
+			}
+
+			:root {
+				--item-width: 350px;
+			}
+
+			.line:nth-child(even) {
+				transform: translateX(calc(var(--item-width)/2));
+			}
+
+			.item {
+				width: var(--item-width);
+				height: var(--item-width);
+				/* background-image: url(./images/3.jpg); */
+				background-size: cover;
+				clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 6% 75%, 6% 25%);
+				cursor: pointer;
+			}
+
+			.line:nth-child(1)>.item:nth-child(1) {
+				background-image: url(./images/1.jpg);
+			}
+
+			.line:nth-child(1)>.item:nth-child(2) {
+				background-image: url(./images/2.jpg);
+			}
+
+			.line:nth-child(1)>.item:nth-child(3) {
+				background-image: url(./images/3.jpg);
+			}
+
+			.line:nth-child(2)>.item:nth-child(1) {
+				background-image: url(./images/4.jpg);
+			}
+
+			.line:nth-child(2)>.item:nth-child(2) {
+				background-image: url(./images/5.jpg);
+			}
+
+			.title {
+				position: relative;
+				width: var(--item-width);
+				height: calc(var(--item-width)/2);
+				color: #fff;
+				font-size: 20px;
+				background: rgb(0, 0, 0, 0.6);
+				text-align: center;
+				line-height: calc(var(--item-width)/2 + var(--item-width)/10);
+				transform: translateY(-175px);
+				transition: transform 0.5s;
+			}
+
+			.neirong {
+				position: relative;
+				width: var(--item-width);
+				height: calc(var(--item-width)/2);
+				color: #fff;
+				font-size: 15px;
+				background: rgb(0, 0, 0, 0.6);
+				text-align: center;
+				line-height: calc(var(--item-width)/2 - var(--item-width)/10);
+				transform: translateY(175px);
+				transition: transform 0.5s;
+			}
+
+			.item:hover>.title,
+			.item:hover>.neirong {
+				transform: translateY(0px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="line">
+				<div class="item">
+					<div class="title">标题</div>
+					<div class="neirong">内容描述</div>
+				</div>
+				<div class="item">
+					<div class="title">标题</div>
+					<div class="neirong">内容描述</div>
+				</div>
+				<div class="item">
+					<div class="title">标题</div>
+					<div class="neirong">内容描述</div>
+				</div>
+			</div>
+			<div class="line">
+				<div class="item">
+					<div class="title">标题</div>
+					<div class="neirong">内容描述</div>
+				</div>
+				<div class="item">
+					<div class="title">标题</div>
+					<div class="neirong">内容描述</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

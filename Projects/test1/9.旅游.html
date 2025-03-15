@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>LvYou</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/c/font_4713394_fn6ckslzlqv.css">
+		<link rel="stylesheet" href="./9.旅游.css" />
+	</head>
+	<body>
+		<div class="main">
+			<!-- 头部开始 -->
+			<div class="header1">
+				<div>您好，欢迎来到畅享旅游官网</div>
+				<div><i class="iconfont icon-youjian" style="font-size: 22px;"></i>123456@qq.com</div>
+			</div>
+			<!-- 头部结束 || 菜单栏开始 -->
+			<div class="header2">
+				<div class="logo">
+					<div class="logoimg"><img src="./images/logo.png" /></div>
+					<div style="font-weight: 600;font-size: 25px;height: 60px;">
+						畅游旅游
+						<br>
+						<span>Travel Agency</span>
+					</div>
+				</div>
+				<div class="caidan">
+					<ul>
+						<li class="active">首页</li>
+						<li>关于我们</li>
+						<li>精选路线</li>
+						<li>旅游预约</li>
+						<li>新闻中心</li>
+						<li>联系我们</li>
+						<div class="layer"></div>
+					</ul>
+				</div>
+			</div>
+			<!-- 菜单栏结束 || 搜索框开始 -->
+			<div class="search-main">
+				<div class="search-title">
+					<h2>和我们一起去旅游 让心灵放个假</h2>
+					<h6>泰国游 | 日本游 | 欧洲游 | 国内游 | 自由行</h6>
+					<span>
+						<input type="text" placeholder="请输入旅行目的地" />
+						<i class="iconfont icon-sousuo"></i>
+					</span>
+					<div class="wow saying animate__animated animate__fadeInRight">
+						人生就是一次充满未知的旅行，在乎的是沿途的风景，在乎的是看风景的心情，旅行不会因为美丽的风景终止。走过的路成为背后的风景，
+						不能回头不能停留，若此刻停留，将会错过更好的风景，保持一份平和，保持一份清醒。享受每一刻的感觉，欣赏每一处的风景，这就是人生</div>
+				</div>
+				<div class="img"></div>
+			</div>
+			<!-- 搜索框结束 || 精选路线开始 -->
+			<div class="road">
+				<div class="roadtext animate__animated animate__fadeIn wow">
+					Select route
+					<br>
+					<span>精选路线</span>
+					<h6>畅想旅游，我们会为您提供各种旅游路线</h6>
+				</div>
+				<div class="roadimg">
+					<!-- js item 渲染 -->
+				</div>
+				<div class="roadadd animate__animated animate__fadeInRight wow">+</div>
+			</div>
+			<!-- 精选路线结束 || 服务开始 -->
+			<div class="fuwu">
+				<!-- js fuwuItem 渲染 -->
+			</div>
+			<!-- 服务结束 || 热门景点开始 -->
+			<div class="road Hot">
+				<div class="roadtext HotText animate__animated animate__fadeIn wow">
+					Hot spots
+					<br>
+					<span>热门景点</span>
+					<h6>热门旅游景点，给您不一样的精彩体验</h6>
+				</div>
+				<div class="HotMain">
+					<ul class="hot_ul">
+						<!-- js hot_Item 渲染 -->
+					</ul>
+				</div>
+			</div>
+			<!-- 热门景点结束 || 新闻动态开始 -->
+			<div class="news">
+				<div class="roadtext newsTitle animate__animated animate__fadeIn wow">
+					News information
+					<br>
+					<span>新闻动态</span>
+					<h6>了解我们，才能更加相信我们</h6>
+				</div>
+				<div class="newsMain animate__animated animate__fadeIn wow">
+					<div class="newsIn">
+						<div class="newsImg animate__animated animate__fadeInLeft wow">
+							<img src="./images/news_left01.jpg" class="showNewsImg">
+							<img src="./images/news_left01.jpg" class="clickimg" />
+							<img src="./images/news_left02.jpg" class="clickimg" />
+							<img src="./images/news_left03.jpg" class="clickimg" />
+						</div>
+						<div class="newsText animate__animated animate__fadeInRight wow">
+							<!-- js newsItem 渲染 -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 新闻动态结束 || 旅行预约开始 -->
+			<div class="travel">
+				<div class="travel_head">
+					<ul class="travel_tab">
+						<li id="booking">旅行预约<span>
+								Travel booking
+							</span></li>
+					</ul>
+				</div>
+				<div class="bookingMain">
+					<div class="left">
+						<!-- js leftItem 渲染 -->
+					</div>
+					<div class="right  animate__animated animate__fadeIn wow">
+						<form action="javascript:void(0);">
+							<label for="name">姓名<span>*</span></label>
+							<input type="text" name="name" id="name" />
+							<br />
+							<label for="date">出行时间<span>*</span></label>
+							<input type="date" name="date" id="date" />
+							<br />
+							<label for="place">旅游地点<span>*</span></label>
+							<input type="text" name="place" id="place" />
+							<br />
+							<label for="number">出行人数<span>*</span></label>
+							<input type="text" name="number" id="number" />
+							<br />
+							<label for="message">留言备注</label>
+							<input type="text" name="message" id="message">
+							<br />
+							<label></label>
+							<button>提交</button>
+						</form>
+					</div>
+				</div>
+				<div class="bookImg around wow"></div>
+			</div>
+			<div class="footer">
+				<div>版权所有 ? 2017 畅享旅游有限公司 ALL RIGHTS RESERVED ICP备12345678</div>
+			</div>
+		</div>
+		<script src="./9.旅游.js"></script>
+		<script src="http://cdn.dowebok.com/131/js/wow.min.js"></script>
+		<script type="text/javascript">
+			var wow = new WOW({
+				boxClass: 'wow',
+				animateClass: 'animated',
+				offset: 70,
+				mobile: true,
+				live: true
+			});
+			wow.init();
+		</script>
+	</body>
+</html>

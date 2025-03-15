@@ -1,0 +1,381 @@
+body {
+    font: 12px / 1.5 Microsoft YaHei, SimSun, Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.spaceBox {
+    width: auto;
+    padding: 30px;
+    background: #FFFFFF;
+    min-height: 1000px;
+    margin: 0 auto;
+}
+
+.myKe_head {
+    height: 44px;
+    border-bottom: solid #4386ff 1px;
+    margin-bottom: 20px;
+}
+
+.myKe_tab {
+    float: left;
+    height: 44px;
+    display: table;
+    list-style-type: none;
+}
+
+.myKe_tab li.active {
+    background: #4386ff;
+    color: #FFFFFF;
+}
+
+.myKe_tab li {
+    width: 106px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    color: #424648;
+    background: #ebebeb;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    cursor: pointer;
+}
+
+.new_edition {
+    float: right;
+    font-size: 14px;
+    color: #91A0B5;
+    background: #F7FAFC;
+    border: 1px solid #E1EBFA;
+    border-radius: 20px;
+    width: 98px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    text-decoration: none;
+}
+
+#search_study {
+    line-height: 36px;
+}
+
+#search_study:after {
+    content: '';
+    display: block;
+    clear: both;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.xqselect {
+    float: left;
+    width: 235px;
+    height: 36px;
+    border-radius: 2px;
+    border: solid #d3d3d3 1px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+    line-height: 36px;
+}
+
+.selectEnBlue {
+    border-color: #4386FF;
+}
+
+.selectEn_name {
+    padding: 0 28px 0 22px;
+    background: url(../img/select_arrow1.png) no-repeat 92% center;
+    line-height: 36px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+.selectEn_con {
+    top: 40px;
+    border: solid #fff 1px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+    border-radius: 2px;
+    width: 100%;
+    max-height: 340px;
+    overflow: auto;
+    background: #FFFFFF;
+    position: absolute;
+    left: -1px;
+    list-style-type: none;
+    cursor: pointer;
+    line-height: 36px;
+    display: none;
+    z-index: 999;
+}
+
+.selectEn_con li {
+    line-height: 40px;
+    border-top: 0;
+    padding: 0 9px 0 22px !important;
+    color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.selectEn_con li:hover {
+    background-color: #ebeef6;
+    color: #4486ff;
+}
+
+.sea_wrap {
+    float: left;
+    height: 36px;
+    border: 1px solid #c7c7c7;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    line-height: 36px;
+}
+
+.sea_wrap input {
+    border-right: 1px solid #c7c7c7;
+    padding: 8px 12px;
+    width: 290px;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    font-size: 14px;
+    border: 0;
+    vertical-align: middle;
+    outline: none;
+    resize: none;
+    font-family: Microsoft YaHei;
+}
+
+.sea_wrap span {
+    width: 40px;
+    height: 30px;
+    background: url(../img/sea.png) no-repeat center / 14px;
+    float: left;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.xqsxtip {
+    font-size: 14px;
+    line-height: 30px;
+    color: #FEA763;
+    zoom: 1;
+    overflow: hidden;
+}
+
+.myke_list {
+    padding: 0 0 0 0;
+}
+
+.myke_list:after {
+    content: '';
+    display: block;
+    clear: both;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.myke_ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.w_couritem {
+    margin-right: 33px;
+    width: 260px;
+    margin-bottom: 30px;
+    min-height: 270px;
+}
+
+.w_courpic {
+    position: relative;
+}
+
+.w_courpic a {
+    position: relative;
+    display: block;
+    animation: instantAnminate 0.6s 1;
+    animation-fill-mode: forwards;
+    color: #333;
+    text-decoration: none;
+}
+
+.w_courpic img {
+    width: 260px;
+    height: 180px;
+    border-radius: 8px;
+    animation: instantAnminate 0.6s 1;
+    animation-fill-mode: forwards;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    cursor: pointer;
+}
+
+.myke_pic_top2 {
+    position: absolute;
+    top: 0px;
+}
+
+.mylearn {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    height: 34px;
+    background: #3A8BFF;
+    border-radius: 8px;
+    display: none;
+}
+
+.mylearn_name {
+    width: 100%;
+    height: 34px;
+    display: flex;
+}
+
+.mylearn_name a {
+    color: #fff;
+}
+
+.mylearn_href {
+    position: relative;
+    padding: 0 8px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 12px;
+    color: #FFFFFF;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.mylearn_href:after {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -6px;
+    content: '';
+    display: block;
+    width: 1px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.mylearn_icon {
+    width: 34px;
+    cursor: pointer;
+}
+
+.w_courtxt {
+    padding-top: 6px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.w_courtxt .w_courtit {
+    font-size: 16px;
+    color: #363a46;
+    line-height: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: normal;
+}
+
+.myke_ul {
+    display: flex;
+}
+
+.w_courtxt .w_courp {
+    font-size: 14px;
+    color: #949aab;
+    line-height: 22px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.floatLayer {
+    z-index: 1000;
+    position: fixed;
+    right: 30px;
+    bottom: 0px;
+    display: block;
+    width: 132px;
+}
+
+.update-notice {
+    position: relative;
+}
+
+.floatLayer .update-notice a {
+    position: relative;
+}
+
+.floatLayer a {
+    display: block;
+    width: 132px;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #3A8BFF;
+    background: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0px 2px 10px 0px rgba(31, 35, 41, 0.1);
+}
+
+.link-instanted {
+    animation: instantAnminate 0.6s 1;
+    animation-fill-mode: forwards;
+}
+
+.floatLayer a img {
+    float: left;
+    margin: 13px 8px 13px 18px;
+}
+
+.w_couritem:hover {
+    background-color: #f3f3f3;
+    border-radius: 6px;
+}
+
+.classover {
+    position: absolute; 
+    width: 260px; 
+    height: 180px; 
+    border-radius: 8px; 
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 130px;
+    font-weight: 500;
+}

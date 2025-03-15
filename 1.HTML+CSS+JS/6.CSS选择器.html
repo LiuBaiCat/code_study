@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test6</title>
+    <style>
+        h2 {
+            color: aqua;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+
+        #header {
+            font-size: 35px;
+        }
+
+        /* 通用选择器 */
+        * {
+            font-family: '楷体';
+            /* font-family: 'KaiTi'; */
+            font-weight: bolder;
+        }
+
+        /* 子元素选择器 */
+        .father>.son {
+            color: yellowgreen;
+        }
+
+        /* 后代选择器 */
+        .father p {
+            color: brown;
+            font-size: larger;
+        }
+
+        /* 相邻元素选择器 */
+        h3+p {
+            background-color: red;
+        }
+
+        /* 伪类选择器 */
+        #element:hover {
+            background-color: blueviolet;
+        }
+
+        /* 
+        选中第一个子元素  :first-child
+               n         :nth-child()
+        链接的状态        :active
+        */
+
+        /* 伪元素选择器 
+            ::after
+            ::before
+        */
+    </style>
+</head>
+
+<body>
+    <h1>不同类别的 CSS 选择器</h1>
+    <h2>这是一个元素选择器实例</h2>
+    <h3 class="highlight">这是一个类选择器实例</h3>
+    <h3>这是另一个类选择器实例</h3>
+
+    <h4 id="header">这是一个 ID 选择器实例</h4>
+
+    <div class="father">
+        <p class="son">这是一个子元素选择器实例</p>
+        <div>
+            <p class="grandson">这是一个后代选择器实例</p>
+        </div>
+    </div>
+
+    <p>This is a simple p 标签</p>
+    <h3>这是一个相邻兄弟选择器实例</h3>
+    <p>This is a simple p 标签</p>
+
+    <h3 id="element">这是一个伪类选择器实例</h3>
+</body>
+
+</html>

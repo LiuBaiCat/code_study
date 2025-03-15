@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fs_col1{
+            width: 190px;
+            height: 480px;
+            background: #fefefe;
+            float: left;
+        }
+        .left_menu{
+            list-style-type: none;
+            position: relative;
+            width:  190px;
+            height: 480px;
+            padding: 10px 0px;
+        }
+        .left_menu>ul{
+            display: flex;
+            font-size: 14px;
+        }
+        .left_menu>li{
+            padding-left: 18px;
+            font-size: 12px;
+            width: 172px;
+            flex: 1;
+            justify-content: center;
+            height: 21px;
+        }
+        .left_menu>li:hover{
+            background-color: #d9d9d9;
+        }
+
+        .hidden {  
+            display: none; 
+        }  
+            
+        .visible {  
+            display: block; 
+        }
+        .left_menu  .submenu {
+            width: 850px;
+            height: 480px;
+            z-index: 99;
+            position: absolute;
+            left: 100%;
+            top: 0px;
+            border: 2px solid #d9d9d9;
+            background-color: #fff;
+            word-wrap: break-word; 
+            word-break: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="fs_col1">
+        <ul class="left_menu" id="left_menu">
+            <li><a href="">家用电器</a>
+                <div class="submenu hidden">1111</div>
+            </li>
+            <li><a href="">手机</a> / <a href="">运营商</a> / <a href="">数码</a>
+                <div class="submenu hidden">2222</div>
+            </li>
+            <li><a href="">电脑</a> / <a href="">办公</a> / <a href="">文具用品</a>
+                <div class="submenu hidden">3333</div>
+            </li>
+            <li><a href="">男装</a> / <a href="">女装</a> / <a href="">童装</a> / <a href="">内衣</a>
+                <div class="submenu hidden">4444</div>
+            </li>
+            <li><a href="">美妆</a> / <a href="">个护清洁</a> / <a href="">宠物</a>
+                <div class="submenu hidden">5555</div>
+            </li>
+            <li><a href="">女鞋</a> / <a href="">箱包</a> / <a href="">钟表</a> / <a href="">珠宝</a>
+                <div class="submenu hidden">6666</div>
+            </li>
+            <li><a href="">男鞋</a> / <a href="">运动</a> / <a href="">户外</a>
+                <div class="submenu hidden">7777</div>
+            </li>
+            <li><a href="">房产</a> / <a href="">汽车</a> / <a href="">汽车用品</a>
+                <div class="submenu hidden">8888</div>
+            </li>
+            <li><a href="">母婴</a> / <a href="">玩具乐器</a>
+                <div class="submenu hidden">9999</div>
+            </li>
+            <li><a href="">食品</a> / <a href="">酒类</a> / <a href="">生鲜</a> / <a href="">特产</a>
+                <div class="submenu hidden">10101010</div>
+            </li>
+            <li><a href="">艺术</a> / <a href="">礼品鲜花</a> / <a href="">农牧园艺</a>
+                <div class="submenu hidden">11111111</div>
+            </li>
+            <li><a href="">京东买药</a> / <a href="">计生情趣</a>
+                <div class="submenu hidden">12121212</div>
+            </li>
+            <li><a href="">图书</a> / <a href="">文娱</a> / <a href="">教育</a> / <a href="">电子书</a>
+                <div class="submenu hidden">13131313</div>
+            </li>
+            <li><a href="">机票</a> / <a href="">酒店</a> / <a href="">旅游</a> / <a href="">生活</a>
+                <div class="submenu hidden">14141414</div>
+            </li>
+            <li><a href="">支付</a> / <a href="">白条</a> / <a href="">保险</a> / <a href="">企业金融</a>
+                <div class="submenu hidden">15151515</div>
+            </li>
+            <li><a href="">安装</a> / <a href="">维修</a> / <a href="">清洗</a> / <a href="">二手</a>
+                <div class="submenu hidden">16161616</div>
+            </li>
+            <li><a href="">元器件</a> / <a href="">原材料</a> / <a href="">五金机电</a>
+                <div class="submenu hidden">17171717</div>
+            </li>
+            
+        </ul>
+
+    </div>
+
+    <script>
+        const lis = document.querySelectorAll('.fs_col1 li');
+        // console.log(lis);
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].addEventListener('mouseenter',function(){
+                // console.log(`鼠标经过${i}`);
+                this.querySelector('.hidden').classList.remove('hidden');
+            })
+            
+            lis[i].addEventListener('mouseleave',function(){
+                // console.log(`鼠标经过${i}`);
+                this.querySelector('.submenu').classList.add('hidden');
+            })
+        }
+
+    </script>
+</body>
+</html>

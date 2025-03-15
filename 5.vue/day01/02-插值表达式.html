@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #app {
+      font-size: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+  插值表达式语法： {{ 表达式 }}
+  -->
+  <div id="app">
+    <p>{{ name }}</p>
+    <p>{{ name.toUpperCase() }}</p>
+    <p>{{ name + '你好' }}</p>
+    <p>{{ name >= 18 ? '成年' : '未成年' }}</p>
+    <p>{{ friend.name }}</p>
+    <p>{{ friend.desc }}</p>
+    <p v-pre>"{{ hobby }}"</p>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        name: 'Pink',
+        age: 18,
+        friend: {
+          name: 'tony',
+          desc: '热爱学习 Vue'
+        }
+      }
+    })
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const str = '我们在学习前端，希望学习前端能高薪毕业';
+        const reg = /前端/;
+        // reg.test(str);
+
+        //是否含有这个词
+        // console.log(reg.test(str));  //返回 true 或 flase
+
+        console.log(reg.exec(str)); //返回数组,否则为null
+    </script>
+</body>
+</html>

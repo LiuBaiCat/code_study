@@ -1,0 +1,255 @@
+body {
+    background-color: #f2f4f7;
+    font: 12px/1.5 微软雅黑, 黑体, Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.login {
+    border-radius: 20px;
+    background-color: white;
+    width: 900px;
+    height: 546px;
+    margin: auto;
+    display: flex;
+    transform: translate(0%, 25%);
+    /* box-shadow: 0 0 5px 1px #999; */
+    box-shadow: 0px 2px 6px 0px rgba(43, 51, 59, 0.06);
+}
+
+/*  */
+.left {
+    width: 540px;
+    padding: 68px 90px 51px;
+}
+
+.lg-title {
+    font-weight: normal;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 44px;
+}
+
+.tel {
+    width: 360px;
+}
+
+.tel::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../img/icon-tel.png) no-repeat center;
+    background-size: cover;
+    vertical-align: middle;
+    position: relative;
+    top: 32px;
+    left: 24px;
+}
+
+.number1 {
+    border: 1px solid #d4d6d9;
+    font-size: 14px;
+    border-radius: 24px;
+    height: 48px;
+    width: 360px;
+    padding: 0 24px 0 54px;
+    margin: 0 0 0 0;
+    box-sizing: border-box;
+}
+
+.number2 {
+    border: 1px solid #d4d6d9;
+    font-size: 14px;
+    border-radius: 24px;
+    height: 48px;
+    width: 360px;
+    padding: 0 24px 0 54px;
+    margin: 0 0 25px 0;
+    box-sizing: border-box;
+}
+
+.pass::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../img/icon-password.png) no-repeat center;
+    background-size: cover;
+    position: relative;
+    top: 36px;
+    left: 24px;
+}
+
+.pass>a {
+    position: absolute;
+    left: 360px;
+    text-decoration: none;
+    color: #91a0b5;
+    font-size: 14px;
+    line-height: 48px;
+}
+
+.i {
+    width: 18px;
+    height: 18px;
+}
+
+.eye-close::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    /* position: relative; */
+    float: inline-end;
+    position: relative;
+    left: -100px;
+    top: -55px;
+    background: url(../img/icon-eye-close.png) no-repeat center;
+    background-size: cover;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.eye-open::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    /* position: relative; */
+    float: inline-end;
+    position: relative;
+    left: -100px;
+    top: -55px;
+    background: url(../img/icon-eye-open.png) no-repeat center;
+    background-size: cover;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#loginbutton {
+    border: 1px solid #d4d6d9;
+    font-size: 14px;
+    border-radius: 24px;
+    width: 360px;
+    height: 48px;
+    background: #6066ff;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transform: 0.5s;
+}
+#loginbutton:hover{
+    background: #7b96ff;
+    transform: 0.5s;
+}
+.err-tip {
+    display: none;
+    padding-left: 12px;
+    font-size: 12px;
+    color: #FF5152;
+    margin-top: 6px;
+    text-align: left;
+    position: relative;
+    top: -20px;
+    left: 0;
+}
+.pass p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.xieyi>p>a {
+    color: #3a8bff;
+}
+
+.others {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px dashed #F2F2F2;
+    padding-top: 24px;
+    font-size: 14px;
+}
+
+.others>a {
+    color: #91A0B5;
+}
+
+.new_login>a {
+    color: #3a8bff;
+}
+
+.clearaft {
+    padding-top: 20px;
+    display: flex;
+    font-size: 14px;
+}
+
+.auto {
+    margin-right: auto;
+    color: #3A8BFF;
+}
+
+.auto>input {
+    margin: 0;
+    margin-right: 6px;
+}
+
+.xieyi {
+    margin-top: 25px;
+    text-align: center;
+}
+
+/*  */
+.right {
+    width: 360px;
+    padding: 155px 64px 0;
+    border-left: 1px dashed #F2F2F2;
+}
+
+.box {
+    border: 1px solid #F2F2F2;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.outtime {
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+.box p {
+    width: 180px;
+    height: 20px;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 70px;
+    margin-bottom: 0;
+}
+
+.box a {
+    width: 94px;
+    height: 34px;
+    background: #FFFFFF;
+    border: 1px solid #3A8BFF;
+    border-radius: 18px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 34px;
+    font-size: 14px;
+    color: #3A8BFF;
+    margin-top: 110px;
+    margin-left: 40px;
+}
+
+.box>img {
+    width: 180px;
+    height: 180px;
+}
+
+.right>p {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}

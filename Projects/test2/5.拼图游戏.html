@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>拼图游戏</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				text-align: center;
+			}
+
+			button {
+				width: 150px;
+				height: 40px;
+				background-color: #dd7e7e;
+				color: white;
+				text-align: center;
+				font-size: 16px;
+				border: none;
+				cursor: pointer;
+			}
+
+			button:hover {
+				background-color: #f5a9a9;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>画布综合-拼图游戏</h1>
+		<hr />
+		<div id="timeDiv">共计时间：00:00:00</div>
+		<canvas id="myCanvas" width="300" height="300" style="border:1px solid #d3d3d3;">
+			对不起，您的浏览器不支持HTML5画布API。
+		</canvas>
+		<br />
+		<button onclick="restartGame()">重新开始</button>
+	</body>
+	<script>
+		let myCanvas = document.getElementById('myCanvas'); //获取画布对象
+		let context = myCanvas.getContext('2d'); //获取2D的context对象
+
+		var img = new Image();
+		img.src = "./images/pintu.jpg";
+
+
+		img.addEventListener('load', () => {
+			randomDisturb(); //打乱拼图的位置
+			drawCanvas(); //在画布上绘制拼图
+		})
+
+		let num = [
+			[00, 01, 02],
+			[10, 11, 12],
+			[20, 21, 22]
+		];
+		let trueNum = [
+			[00, 01, 02],
+			[10, 11, 12],
+			[20, 21, 22]
+		];
+		let startDarw;
+
+		let time = 0;
+		let timer = null;
+
+		function randomDisturb() { //循环20次进行拼图打乱    
+			for (var i = 0; i < 20; i++) {
+				//随机抽取其中一个数据
+				var i1 = Math.round(Math.random() * 2);
+				var j1 = Math.round(Math.random() * 2);
+				//再随机抽取其中一个数据
+				var i2 = Math.round(Math.random() * 2);
+				var j2 = Math.round(Math.random() * 2);
+				//对调它们的位置
+				var temp = num[i1][j1];
+				num[i1][j1] = num[i2][j2];
+				num[i2][j2] = temp;
+			}
+			startDarw = JSON.parse(JSON.stringify(num));
+		}
+
+		let smallPictureWidth = 300 / 3; //小图宽度
+		function drawCanvas() {
+			//清空画布
+			context.clearRect(0, 0, 300, 300);
+			//使用双重for循环绘制3x3的拼图
+			for (var i = 0; i < 3; i++) {
+				for (var j = 0; j < 3; j++) {
+					if (num[i][j] != 22) {
+						//获取数值的十位数，即第几行
+						var row = parseInt(num[i][j] / 10);
+						//获取数组的个位数，即第几列
+						var col = num[i][j] % 10;
+						//在画布的相关位置上绘图
+						context.drawImage(img, col * smallPictureWidth, row * smallPictureWidth, smallPictureWidth, smallPictureWidth,
+							j * smallPictureWidth, i * smallPictureWidth, smallPictureWidth, smallPictureWidth);
+					}
+				}
+			}
+		}
+
+		myCanvas.addEventListener('mousedown', (e) => {
+			if (!timer) {
+				startTimer()
+			}
+			let bound = myCanvas.getBoundingClientRect();
+			let x = e.clientX - bound.left;
+			let y = e.clientY - bound.top;
+			let row = parseInt(y / smallPictureWidth);
+			let col = parseInt(x / smallPictureWidth);
+
+			if (num[row][col] != 22) {
+				moveBox(row, col);
+				drawCanvas();
+				console.log(num, startDarw);
+				let isWin = checkWin();
+				if (isWin) {
+					clearInterval(timer);
+					context.drawImage(img, 0, 0);
+					context.font = "30px Arial";
+					context.fillStyle = "red";
+					context.fillText("恭喜你，拼图成功！", 50, 150);
+				}
+			}
+		})
+
+		function moveBox(row, col) {
+			// 检测空白区域是否在当前点击的方块上下左右
+			if (row > 0 && num[row - 1][col] == 22) {
+				num[row - 1][col] = num[row][col];
+				num[row][col] = 22;
+			} else if (row < 2 && num[row + 1][col] == 22) {
+				num[row + 1][col] = num[row][col];
+				num[row][col] = 22;
+			} else if (col > 0 && num[row][col - 1] == 22) {
+				num[row][col - 1] = num[row][col];
+				num[row][col] = 22;
+
+			} else if (col < 2 && num[row][col + 1] == 22) {
+				num[row][col + 1] = num[row][col];
+				num[row][col] = 22;
+			}
+		}
+
+		function checkWin() {
+			for (var i = 0; i < 3; i++) {
+				for (var j = 0; j < 3; j++) {
+					if (num[i][j] != trueNum[i][j]) {
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+
+		function restartGame() {
+			num = JSON.parse(JSON.stringify(startDarw));
+			time = 0;
+			clearInterval(timer);
+			timer = null;
+			document.getElementById('timeDiv').innerHTML = '共计时间：00:00:00';
+			drawCanvas();
+		}
+
+		function startTimer() {
+			timer = setInterval(() => {
+				time++;
+				let h = parseInt(time / 3600);
+				let m = parseInt(time / 60);
+				let s = time % 60;
+				if (s < 10)
+					s = "0" + s;
+				if (m < 10)
+					m = "0" + m;
+				if (h < 10)
+					h = "0" + h;
+				document.getElementById('timeDiv').innerHTML = '共计时间：' + h + ':' + m + ':' + s;
+			}, 1000)
+		}
+	</script>
+</html>

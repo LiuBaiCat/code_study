@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //在控制台调用fun()时，令i = 100时修改无效
+        function count(){
+            let i = 0;
+            function fn(){
+                i++;
+                console.log(`函数被调用了${i}次`);
+            }
+            return fn;
+        }
+        const fun = count();
+    </script>
+</body>
+</html>

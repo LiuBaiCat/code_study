@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>日历</title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.main {
+			width: 450px;
+			height: 350px;
+			margin: 0 auto;
+			background: #dbdbdb;
+		}
+
+		.header {
+			text-align: center;
+		}
+
+		ul {
+			width: 100%;
+			font-family: arial;
+			font-weight: bold;
+			font-size: 14px;
+		}
+
+		ul li {
+			width: 14.28%;
+			height: 36px;
+			line-height: 36px;
+			list-style-type: none;
+			display: block;
+			box-sizing: border-box;
+			float: left;
+			text-align: center;
+		}
+	</style>
+	<body>
+		<div class="main">
+			<div class="header">
+				<button class="prev">上个月</button>
+				<span>2222年11月</span>
+				<button class="next">下个月</button>
+			</div>
+			<div class="content">
+				<div class="top">
+					<ul>
+						<li>日</li>
+						<li>一</li>
+						<li>二</li>
+						<li>三</li>
+						<li>四</li>
+						<li>五</li>
+						<li>六</li>
+					</ul>
+				</div>
+				<div class="daylist">
+					<ul class="days">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		const date = new Date();
+		let year = date.getFullYear();
+		let month = date.getMonth() + 1;
+		let day = date.getDate();
+		let week = date.getDay();
+
+		function dateComputed(year, month, day) {
+			// 计算某月有多少天
+			let datelist = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+			let dayLength = datelist[month - 1];
+			if (month == 2) {
+				if (year % 4 == 0 && year % 400 != 0 || year % 100 == 0 && year % 400 == 0) {
+					dayLength = 29;
+				}
+			}
+			return dayLength;
+		}
+
+		function dateFrist(year, month) {
+			// 计算当前月份的第一天是星期几 
+			const firstDayOfMonth = new Date(year, month - 1, 1);
+			const day = firstDayOfMonth.getDay();
+			// console.log(day);
+			return day;
+		}
+
+		function showCalendar(year, month, day) {
+			const days = document.querySelector('.days');
+			const span = document.querySelector('span');
+			span.innerHTML = year + '年' + month + '月';
+
+			let dayLength = dateComputed(year, month, day);
+			let fristDay = dateFrist(year, month);
+
+			days.innerHTML = '';
+			for (let m = 0; m < fristDay; m++) {
+				const li = document.createElement('li');
+				li.innerHTML = '';
+				days.appendChild(li);
+			}
+
+			for (let i = 1; i <= dayLength; i++) {
+				const li = document.createElement('li');
+				li.innerHTML = i;
+				if (i == day) li.style.color = 'red';
+				days.appendChild(li);
+			}
+		}
+		showCalendar(year, month, day);
+		const prev = document.querySelector('.prev');
+		const next = document.querySelector('.next');
+		prev.addEventListener('click', function() {
+			month--;
+			if (month == 0) {
+				year--;
+				month = 12;
+			}
+			showCalendar(year, month, day);
+		})
+		next.addEventListener('click', function() {
+			month++;
+			if (month == 13) {
+				year++;
+				month = 1;
+			}
+			showCalendar(year, month, day);
+		})
+	</script>
+</html>

@@ -1,0 +1,152 @@
+.main-col4 {
+    background-color: #fff;
+    width: 190px;
+}
+
+.main-col4-d1 {
+    height: 88px;
+    padding-top: 14px;
+    padding-left: 20px;
+}
+
+.login-t h5 {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+}
+
+.login-t h5 img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.login-t>a {
+    color: #666;
+}
+
+.login-t p a {
+    color: #333;
+}
+
+.login-b {
+    margin-top: 10px;
+}
+
+.login-b a {
+    display: inline-block;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 15px;
+    color: #e0eef0;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.login-b a:first-child {
+    background-color: #e1251b;
+}
+
+.login-b a:last-child {
+    background-color: #363634;
+}
+
+.login-b a:hover {
+    background-color: #e93333 !important;
+    color: #e0eef0 !important;
+}
+
+
+.main-col4-d2 {
+    height: 130px;
+    padding: 0 15px;
+
+}
+
+.news-hd {
+    width: 160px;
+    height: 20px;
+    padding: 5px 0;
+    border-top: 1px solid #eee;
+}
+
+.news-bd ul {
+    width: 160px;
+    border-bottom: 1px solid #eee;
+    height: 101px;
+}
+
+.news-hd h3 {
+    float: left;
+    color: #333;
+}
+
+.news-hd a {
+    float: right;
+}
+
+.news-bd li {
+    width: 160px;
+    height: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 9px;
+    padding-top: 0px;
+}
+
+.news-bd li a {
+    color: #666;
+}
+
+.news-bd span {
+    display: inline-block;
+    width: 35px;
+    margin-right: 3px;
+    /* background-color: #fdeeed; */
+    background-color: rgba(225, 37, 27, .08);
+    color: #e33333;
+    text-align: center;
+}
+
+.main-col4-d3 {
+    padding: 10px 0;
+    height: 238px;
+    width: 190px;
+}
+
+.main-col4-d3 li {
+    float: left;
+    width: 63px;
+    height: 50px;
+    text-align: center;
+    list-style-type:none;
+}
+
+.main-col4-d3 li img {
+    width: 28px;
+    height: 28px;
+}
+
+.main-col4-d3 li p {
+    height: 27px;
+    line-height: 27px;
+}
+
+/* <--省-->
+.main-col4-d3 li:nth-child(3) {
+    position: relative;
+}
+
+.main-col4-d3 li:nth-child(3) i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    background-color: #e1251b;
+    width: 12px;
+    height: 16px;
+    line-height: 16px;
+} */

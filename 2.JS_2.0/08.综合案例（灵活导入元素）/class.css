@@ -1,0 +1,81 @@
+.lan{
+    width: 54px;
+    width: 850px;
+    border-bottom: 2px solid #CCC;
+    margin-left: 213px;
+    margin-top: 49px;
+}
+.top{
+    /* margin-top: px; */
+    /* margin-left: 214px; */
+    font-size: 20px;
+    height: 42px;
+}
+.top a{
+    margin-top: 10px;
+    text-decoration: none; /* 移除默认下划线 */  
+        border-bottom: 2px solid #0099FF; /* 添加底部边框作为下划线 */  
+        padding-bottom: 6px; /* 调整下划线与文字之间的距离 */  
+        display: inline-block; /* 允许设置宽度 */  
+        width: 100px; /* 设置下划线长度 */ 
+        
+}
+.find{
+    width: 224px;
+    height: 26px;
+    margin-top: 10px;
+    margin-left: 442px;
+    border-radius: 12px; /* 这将使矩形产生圆角 */
+    background-color: #f0f0f0;
+}
+
+.searchInput{
+    margin-left: 8px;
+    width: 112px;
+    height: 20px;
+    background-color: #f0f0f0;
+    border: none;
+    font-size: 12px;
+    outline: none; /* 防止浏览器默认的轮廓线 */ 
+}
+.add img{
+    width: 18px;
+    height: 18px;
+    margin-top: 16px;
+    margin-left: 6px;
+}
+.wz{
+    font-size: 14px;
+    margin-top: 14px;
+    margin-right: 2px;
+    text-decoration: none; /* 移除默认下划线 */  
+    color: #0099FF;
+}
+.clas{
+    position: relative;
+    width: 268px;
+    height: 280px;
+    background-color: #f0f0f0;
+    border: #ccc solid 1px;
+    left: 213px;
+    top: 20px;
+    margin-right: 16px;
+    margin-bottom: 30px;
+}
+.h3{
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #000;
+    font-family:'微软雅黑';
+    font-weight: normal;
+    margin-top: 2px;
+    margin-left: 10px;
+    padding: 5px 0px;
+}
+p{
+    font-size: 12px;
+    color: #666;
+    margin-top: 0;
+    margin-left: 8px;
+    margin-bottom: 0;
+}

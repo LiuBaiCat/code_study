@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./class.css">
+</head>
+<body>
+    <div class="lan">
+        <div class="top" style="float: left;">
+            <a href="" align="center" style="color: black;">我学的课</a>
+        </div>
+        <div class="find" style="float: left;">
+            <input type="text" placeholder="搜索" class="searchInput">
+        </div>
+        <div class="add" style="float: right;">
+            <img src="./jiahao.png">
+            <a href="" class="wz" style="float: right;">添加课程</a>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <script>
+        let data = [
+            {
+                asrc:'./dgcj.html',
+                src:'./images/dgjc.jpg',
+                title:'电工基础',
+                name:'袁涛',
+                classname:'2023软件1班'
+            },
+            {
+                asrc:'./dgcj.html',
+                src:'./images/xlk.png',
+                title:'大学心理健康教育',
+                name:'方杨清',
+                classname:'2023软件1班'
+            },
+            {
+                asrc:'./dgcj.html',
+                src:'./images/zzk.png',
+                title:'思想道德与法治&nbsp;在线开...',
+                name:'唐咏春',
+                classname:'2023软件1班'
+            },
+            {
+                asrc:'./dgcj.html',
+                src:'./images/jsjk.jpg',
+                title:'计算机应用基础',
+                name:'易欣',
+                classname:'2023软件1班'
+            },
+            {
+                asrc:'./dgcj.html',
+                src:'./images/web.png',
+                title:'Web客户端编程（Web前...',
+                name:'史小春',
+                classname:'2023软件1班'
+            },
+            {
+                asrc:'./dgcj.html',
+                src:'./images/yyk.jpg',
+                title:'大学英语',
+                name:'何玥',
+                classname:'2023软件1班'
+            }];
+
+            for (let i = 0; i < data.length; i++) {
+                document.write(`
+                
+                <div class="clas" style="float: left;">
+                    <a href=${data[i].asrc} target="_blank" style="text-decoration: none;">
+                        <img src=${data[i].src} width="100%" height="169px">
+                        <h3 class="h3">${data[i].title}</h3>
+                    </a>
+                    <p>${data[i].name}</p>
+                    <p>${data[i].classname}</p>
+                </div>
+                `);
+
+                if(i != 0 && (i + 1) % 3 == 0){
+                    document.write(`
+                    <div style="clear: both;"></div>
+                    `);
+                }
+            }
+    </script>
+    
+
+</body>
+</html>

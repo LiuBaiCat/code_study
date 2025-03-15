@@ -1,0 +1,357 @@
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+body {
+    font: 12px / 1.5 MIcrosoft YaHei, Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #202020;
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+}
+ul, ol, li {
+    list-style-type: none;
+}
+h3:hover{
+    background-color: #efefef;
+}
+.ztop {
+    height: 44px;
+    background: url(../img/opacity70.png) repeat;
+    position: relative;
+    z-index: 998;
+}
+
+.zt_center {
+    margin: 0 auto;
+    height: 44px;
+}
+
+.zt_user {
+    position: relative;
+    float: right;
+    width: 106px;
+    height: 36px;
+    padding-right: 20px;
+}
+
+.zt_u_abs {
+    height: 36px;
+    margin-top: 3px;
+}
+
+.zt_u_b {
+    height: 36px;
+    padding-top: 8px;
+}
+
+.zt_u_pro {
+    border-radius: 12px;
+    vertical-align: middle;
+    display: inline;
+}
+.zt_u_name{
+    height: 24px;
+    margin-left: 6px;
+    color: #fff;
+    line-height: 24px;
+    vertical-align: middle;
+    display: inline-block;
+    max-width: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.zt_u_b .h-combox {
+    cursor: pointer;
+    background: url(../img/ss_member.png) 0px -115px no-repeat;
+    width: 10px;
+    height: 10px;
+    margin: 6px 0 0 5px;
+    vertical-align: middle;
+    border: none;
+    outline: none;
+    resize: none;
+}
+.zt_u_bg {
+    width: 120px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    background: url(../img/opacity60.png) repeat;
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    top: 44.4px;
+}
+.zt_u_enter {
+    background: url(../img/ss_member.png) 16px 7px no-repeat;
+}
+.zt_u_enter{
+    padding-left: 40px;
+    line-height: 30px;
+}
+.zt_u_bg a {
+    color: #ccc;
+}
+.zt_u_exit {
+    background: url(../img/ss_member.png) 16px -20px no-repeat;
+}
+.zt_u_exit {
+    padding-left: 40px;
+    line-height: 30px;
+}
+.clear {
+    clear: both;
+}
+/*  */
+.c-header {
+    border-bottom: 1px solid #e4e4e5;
+    background: #fff;
+    width: 100%;
+}
+.headerwrap {
+    height: 50px;
+    padding-top: 10px;
+    width: 1100px;
+    margin: 0px auto;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    overflow: hidden;
+}
+.c-menu {
+    float: right;
+    margin-top: 5px;
+    color: #fff;
+}
+.navshow ul {
+    float: left;
+    margin-right: 10px;
+}
+.c-menu li {
+    float: left;
+    margin-left: 10px;
+    position: relative;
+}
+.c-menu li a.current {
+    background: #999;
+    color: #fff;
+}
+.c-menu li a {
+    font-size: 18px;
+    color: #333;
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+.experience {
+    display: inline-block;
+    padding: 0 10px !important;
+    height: 28px;
+    border: 1px solid #e1e7f0;
+    background: #F6F9FE;
+    text-align: center;
+    line-height: 28px;
+    margin-left: 20px;
+}
+.c-header h1 {
+    font-size: 24px;
+    color: #333;
+    font-weight: normal;
+}
+.c-header h1 a {
+    color: #7b9e31;
+}
+.c-header h1 span.articleschool {
+    font-size: 14px;
+    color: #fff;
+}
+.main {
+    width: 1125px;
+    margin: 20px auto 0px;
+}
+/*  */
+.left {
+    float: left;
+    width: 640px;
+}
+.continue-study {
+    height: 37px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    line-height: 37px;
+    font-size: 18px;
+    padding: 10px 10px 10px 20px;
+}
+.charter b {
+    background: rgba(0, 0, 0, 0) url(../img/bg.png) repeat scroll -44px -63px;
+    display: inline-block;
+    height: 17px;
+    margin: 0 3px -3px;
+    width: 17px;
+}
+.left .content, .left .content1 {
+    position: relative;
+    border: 1px solid #ddd;
+    padding-bottom: 30px;
+    padding-top: 15px;
+}
+.roundcorner {
+    border-radius: 3px;
+}
+.wwc {
+    padding: 20px 0 35px 20px;
+    background: #fff;
+    margin-bottom: 0;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #555;
+}
+.left .timeline {
+    padding: 0px 10px 0px 20px;
+}
+.units {
+    margin-bottom: 20px;
+}
+.units h2.addbgcolor {
+    background: #eee;
+}
+.units >h2 {
+    height: auto;
+}
+.timeline h2 {
+    position: relative;
+}
+.units h2 {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 28px;
+    color: #000;
+}
+.clearfix {
+    zoom: 1;
+    overflow: hidden;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    font-size: 0;
+    clear: both;
+    overflow: hidden;
+}
+.knowledgeCloseBtnImg {
+    background: url(../img/knowledgeCloseBtn.png) no-repeat center center;
+}
+.knowledgeOpenBtnImg {
+    background: url(../img/knowledgeOpenBtn.png) no-repeat center center;
+}
+.knowledgeOpenBtn {
+    float: left;
+    width: 24px;
+    height: 12px;
+    margin-right: 6px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+.levelfirst .fontCon {
+    width: 480px;
+}
+.fl {
+    float: left;
+}
+.fontCon {
+    overflow: hidden;
+}
+.units h2 a {
+    color: #000;
+}
+.leveltwo {
+    color: #999;
+}
+.leveltwo{
+    padding-left: 10px;
+}
+.leveltwo h3 {
+    position: relative;
+    font-weight: normal;
+    margin-top: 1px;
+    color: #555;
+}
+.leveltwo .fontCon {
+    width: 476px;
+}
+.fontCon {
+    overflow: hidden;
+}
+.leveltwo h3 .articlename {
+    margin-left: 5px;
+}
+.fontCon .articlename {
+    line-height: 22px;
+    padding: 4px 0;
+}
+.leveltwo h3 .icon {
+    position: absolute;
+    right: 0;
+}
+.leveltwo h3 .icon {
+    float: right;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    color: #999;
+    width: 82px;
+    text-align: right;
+}
+input {
+    vertical-align: middle;
+    color: #000;
+    border: 0;
+    outline: none;
+    resize: none;
+}
+.timeline em.orange {
+    background: #ff7a38;
+    border-radius: 17px;
+}
+.timeline em {
+    width: 17px;
+    height: 17px;
+    line-height: 17px;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    margin: 4px 5px 0px;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: normal;
+}
+#top {
+    display: none;
+    position: fixed;
+    width: 72px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    bottom: 154px;
+    border: 1px solid #7b9e31;
+    color: #0a0a0a;
+    background: #fff url(../img/top.png) no-repeat 9px center;
+    padding-left: 42px;
+    border-radius: 3px;
+    right: 17px;
+    z-index: 100;
+}

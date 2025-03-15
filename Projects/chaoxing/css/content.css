@@ -1,0 +1,346 @@
+* {
+    font: 12px / 1 '微软雅黑', "Hiragino Sans GB", "Helvetica Neue", Helvetica, STHeiTi, "Microsoft Yahei", sans-serif;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    background-color: #f6f8fa;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* // 滚动条宽度 */
+div::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* // 滚动条轨道 */
+div::-webkit-scrollbar-track {
+    background: #454ea1;
+    border-radius: 2px;
+}
+
+body::-webkit-scrollbar-track {
+    background: none;
+    border-radius: 2px;
+}
+
+
+/* // 小滑块 */
+div::-webkit-scrollbar-thumb {
+    background: #9897b0;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+    background: #ada8a8;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #787878;
+}
+
+.schoolname h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 24px;
+    cursor: pointer;
+}
+
+.head {
+    align-items: center;
+    float: left;
+    background: url(../img/8dbc96051e7bc028511bb1a5c48bf7d8.jpg) center center / cover no-repeat;
+    color: rgb(255, 255, 255);
+    height: 80px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    min-width: 450px;
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+.right {
+    display: flex;
+    list-style: none;
+    width: 195px;
+}
+
+.right>li {
+    display: inline;
+    display: flex;
+    height: 80px;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.right li>a {
+    color: white;
+    padding-right: 10px;
+}
+
+.right li>h3 {
+    font-size: 12px;
+}
+
+.right li>img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.icon::before {
+    display: block;
+    content: '';
+    background: url(../img/xiala.png) center center / cover no-repeat;
+    width: 14px;
+    height: 14px;
+}
+
+.icon {
+    content: '';
+    margin-left: 6px;
+    font-size: 14px;
+}
+
+.user_popup {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 6px;
+    background-color: #6170c3;
+    float: right;
+    width: 140px;
+    border-radius: 4px;
+    padding: 8px 0;
+    box-shadow: 0 0 20px 0 rgba(43, 51, 59, 0.2);
+}
+
+.user_popup ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.user_popup ul>li ,
+.user_popup ul>li a
+ {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: white;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.user_popup ul>li:hover {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #2b333b;
+    background: #f8f8f8;
+    vertical-align: middle;
+}
+.user_popup ul li a{
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    width: 100%;
+    display: block;
+}
+.user_popup ul li a:hover{
+    color: black;
+}
+.cebianlan {
+    position: fixed;
+    width: 200px;
+    left: 20px;
+    top: 100px;
+    height: calc(-120px + 100vh);
+    background-color: #4d58b5;
+    border-radius: 8px;
+}
+
+.user-block {
+    height: 207px;
+}
+
+.user-block img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 40px 75px 20px;
+}
+
+.user-block p {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 4px;
+    color: white;
+}
+
+.cebianlan_bottom {
+    border-top: 1px solid #999fcd;
+    background-color: #4d58b5;
+    font-size: 14px;
+    line-height: 56px;
+    height: calc(100% - 207px);
+    max-width: 100%;
+    max-height: none;
+    overflow: hidden;
+    color: white;
+    white-space: nowrap;
+    font-weight: normal;
+    justify-content: space-between;
+    border-radius: 0 0 6px 6px;
+
+}
+
+.cebianlan_bottom ul {
+    padding: 0;
+}
+
+.cebianlan_bottom li {
+    width: 100%;
+    height: auto;
+    line-height: normal;
+    list-style: none;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.cebianlan_bottom li:hover {
+    background-color: #2439a9;
+}
+
+.cebianlan_bottom h3 {
+    width: 160px;
+    flex: 1;
+    font-size: 14px;
+    line-height: 56px;
+}
+
+.cebianlan_bottom li>div {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.con_right {
+    margin-left: 240px;
+    height: 100%;
+}
+
+.right_con {
+    overflow-x: hidden;
+    min-width: 900px;
+    margin-top: 80px;
+    height: calc(-80px + 100vh);
+}
+
+.center {
+    padding-top: 0px;
+    margin: auto;
+    min-height: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.active {
+    background-color: #5965c9;
+}
+
+.icon-space {
+    margin-left: 12px;
+    margin-right: 8px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.icon-space::before {
+    content: "";
+    font-size: 30px;
+    background: url(../img/pac.png) center center / cover no-repeat;
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin: 10px 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.icon2 {
+    background-position: 0px 0px;
+    width: 22px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+    background: url(../img/yunicon.png) no-repeat;
+    cursor: pointer;
+}
+
+.icon-tea {
+    margin-left: 12px;
+    margin-right: 8px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.icon-tea::before {
+    content: "";
+    font-size: 30px;
+    background: url(../img/peo.png) center center / cover no-repeat;
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin: 10px 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.icon5 {
+    width: 22px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+    background: url(../img/yunicon.png) no-repeat;
+    background-position: -48px 0px;
+    cursor: pointer;
+}
+
+.icon6 {
+    width: 22px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+    background: url(../img/yunicon.png) no-repeat;
+    background-position: -97px 0px;
+    cursor: pointer;
+}

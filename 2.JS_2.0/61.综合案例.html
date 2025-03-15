@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .modal{
+            width: 300px;
+            height: 120px;
+            border: 1px solid black;
+        }
+
+        .modal i{
+            position: absolute;
+            right: 0;
+        } */
+        .modal {
+            /* display: none; */
+            width: 300px;
+            height: 80px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* 确保模态框在其他内容之上 */
+        }
+
+        .modal .header {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .modal .header i {
+            float: right;
+            cursor: pointer;
+        }
+
+        .modal .body {
+            margin-bottom: 0; /* 移除默认的下边距 */
+        }
+
+        /* 关闭按钮的样式 */
+        .modal .header i:hover {
+            color: red;
+        }
+
+        .body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button id="delete">删除</button>
+    <button id="login">登录</button>
+
+    <!-- <div class="modal">
+        <div class="header">温馨提示 <i>X</i></div>
+        <div class="body">您没有删除权限操作</div>
+    </div> -->
+
+    <script>
+        //1. Modal 构造函数封装 - 模态框
+        function Modal(title = '', message = '') {
+          //创建 modal 模态框盒子
+          //1.1 创造div标签
+          this.modalBox = document.createElement('div');
+          //1.2 给div标签添加类名为 modal
+          this.modalBox.className = 'modal';
+          //1.3 modal盒子内部填充 2个div标签并且修改文字内容
+          this.modalBox.innerHTML = `
+            <div class="header">${title} <i>X</i></div>
+            <div class="body">${message}</div>
+          `;
+        //   console.log(this.modalBox);
+        }
+
+        // new Modal('温馨提示','您没有删除权限操作');
+        // new Modal('友情提示','您还没有注册呢');
+
+        //2.给构造函数原型对象挂载 open 方法
+        Modal.prototype.open = function(){
+            const box = document.querySelector('.modal');
+            box && box.remove();
+            
+            document.body.append(this.modalBox);
+
+            this.modalBox.querySelector('i').addEventListener('click',() =>{
+                this.close();
+            })
+        }
+
+        Modal.prototype.close = function(){
+            this.modalBox.remove();
+        }
+
+        document.querySelector('#delete').addEventListener('click',() =>{
+            const del = new Modal('温馨提示','您没有删除权限操作');
+            del.open();
+        })
+
+        document.querySelector('#login').addEventListener('click',() =>{
+            const del = new Modal('友情提示','您还没有注册呢');
+            del.open();
+        })
+    </script>
+</body>
+</html>

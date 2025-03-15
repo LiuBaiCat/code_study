@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: inline-block;
+            /* width: 300px; */
+            height: 40px;
+            border: 1px solid pink;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        const div = document.querySelector('div');
+        function MyTime() {
+            const date = new Date();
+            let str = date.toLocaleString();//    yyyy/m/d hh:mm
+            str = str.replace(/\//g, '-');//    将字符串中的/替换成-的方法
+            div.innerHTML = str;
+        }
+        MyTime();
+        setInterval(MyTime,1000);
+        
+    </script>
+</body>
+</html>

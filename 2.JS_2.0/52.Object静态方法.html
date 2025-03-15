@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const o = {uname:'pink',age:18}
+        // for (const k in o) {
+        //     console.log(k);
+        //     console.log(o[k]);
+        // }
+
+        console.log(Object.keys(o));//uname age
+        console.log(Object.values(o));//pink 18
+
+        //对象的拷贝
+        const obj = {};
+        Object.assign(obj,o);
+        console.log(obj);//age: 18,uname: "pink"
+
+        Object.assign(o,{gender:'女'});
+        console.log(o);//age: 18,uname: "pink",gender:'女'
+    </script>
+</body>
+</html>

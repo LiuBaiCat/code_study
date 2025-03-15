@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            age: 18,
+        }
+        function fn(x, y) {
+            console.log(this);//原指window
+            console.log(x + y);
+        }
+        fn.apply(obj, [1, 2]);//{age: 18}，3
+
+        // const max = Math.max(1, 2, 3);
+        // console.log(max);
+
+        const arr = [114, 514, 191];
+        const max = Math.max.apply(Math, arr);
+        // const max = Math.max.apply(null, arr);
+        console.log(max);// 514
+        console.log(Math.max(...arr));// 514
+    </script>
+</body>
+
+</html>

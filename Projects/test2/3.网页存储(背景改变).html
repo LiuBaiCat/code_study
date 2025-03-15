@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HTML5 Web存储</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				text-align: center;
+			}
+
+			body {
+				background: #bfbfbf;
+			}
+
+			.main {
+				position: relative;
+				margin: 20px auto;
+				width: 80%;
+				/* background-color: green; */
+			}
+
+			.content {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				background: #fff;
+				height: 300px;
+			}
+
+			.inline {
+				height: 200px;
+				padding-top: 20px;
+				width: 60%;
+				background: #dbdbdb;
+			}
+
+			h1,
+			h4,
+			.footer {
+				color: #fff;
+			}
+
+			h1 {
+				line-height: 100px;
+			}
+
+			h4 {
+				margin: 0 auto;
+				width: 90%;
+				line-height: 40px;
+				/* background: green; */
+			}
+
+			.inlineFooter {
+				width: 100%;
+				/* background: green; */
+			}
+
+			.footer {
+				line-height: 60px;
+			}
+
+			.inlineFooter {
+				margin: 0 auto;
+				width: 90%;
+				height: 10px;
+			}
+
+			.inlineContent {
+				padding-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="header">
+				<h1>HTML5 Web存储</h1>
+			</div>
+			<div class="content">
+				<div class="inline">
+					<div class="inlineHeader">
+						<h4>页面设置</h4>
+					</div>
+					<div class="inlineContent">
+						<br />
+						<label>主题颜色：</label>
+						<select name="" id="">
+							<option value="red">红色</option>
+							<option value="orange">橙色</option>
+							<option value="yellow">黄色</option>
+							<option value="green">绿色</option>
+							<option value="blue">蓝色</option>
+							<option value="purple">紫色</option>
+						</select>
+						<br />
+						<br />
+						<button>保存并设置</button>
+					</div>
+					<div class="inlineFooter"></div>
+				</div>
+			</div>
+			<div class="footer">Copyright©: ZY 2021-2024 All Rights Reserved.</div>
+		</div>
+	</body>
+	<script>
+		const color = localStorage.getItem('HTMLcolor') || 'green';
+		setBgColor(color);
+
+		function setBgColor(color) {
+			const main = document.querySelector('.main');
+			const h4 = document.querySelector('h4');
+			const inlineFooter = document.querySelector('.inlineFooter');
+
+			main.style.backgroundColor = color;
+			h4.style.backgroundColor = color;
+			inlineFooter.style.backgroundColor = color;
+			localStorage.setItem('HTMLcolor', color);
+		}
+		const btn = document.querySelector('button');
+		btn.addEventListener('click', function() {
+			const color = document.querySelector('select').value;
+			setBgColor(color);
+		})
+	</script>
+</html>

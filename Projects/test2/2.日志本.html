@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>日志本</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				text-align: center;
+			}
+
+			textarea {
+				width: 90%;
+				text-align: left;
+				text-indent: 30px;
+				font-size: 20px;
+			}
+
+			button {
+				width: 200px;
+				height: 30px;
+				font-size: 20px;
+			}
+
+			table {
+				margin: auto;
+				width: 90%;
+				text-align: center;
+			}
+
+			table,
+			th,
+			td {
+				border: 1px solid #ccc;
+				border-collapse: collapse;
+			}
+
+			tr {
+				height: 40px;
+			}
+
+			th {
+				background-color: #f2f2f2;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>我的日志本</h1>
+		<h2>开始写日志</h2>
+		<textarea id="text" cols="30" rows="10"></textarea>
+		<br />
+		<button class="save">保存日志</button>
+		<button class="clear">清空全部日志</button>
+		<p>历史记录</p>
+		<table>
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>日志内容</th>
+					<th>保存时间</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!--  -->
+			</tbody>
+		</table>
+	</body>
+	<script>
+		const arr = JSON.parse(localStorage.getItem('initData')) || [{ id: 1, content: 'green', time: 'Invalid Date' }];
+		const tbody = document.querySelector('tbody');
+
+		function render() {
+			//利用map遍历数组，返回对应tr的数组
+			const trArr = arr.map(function(ele, index) {
+				return `
+		        <tr>
+		        <td>${ele.id}</td>
+		        <td>${ele.content}</td>
+		        <td>${ele.time}</td>
+		        <td><button data-id="${index}">删除</button></td>
+						</tr>
+		        `;
+			});
+			tbody.innerHTML = trArr.join('');
+		}
+		render();
+		
+		const text = document.querySelector('#text');
+		const save = document.querySelector('.save');
+		save.addEventListener('click', function(e) {
+			e.preventDefault();
+			if (!text.value) return;
+			const content = text.value;
+			const time = new Date().toLocaleString();
+			const id = arr.length + 1;
+			arr.push({ id, content, time });
+			localStorage.setItem('initData', JSON.stringify(arr));
+			render();
+			text.value = '';
+			alert('日志已保存');
+		});
+		
+		tbody.addEventListener('click', function(e) {
+			//判断是否点击的是删除按钮
+			if (e.target.tagName === 'BUTTON') {
+				if (confirm('您确定要删除这条数据嘛？（删除后无法进行恢复！！）')) {
+					if (confirm('再次确定您是否要删除？')) {
+						arr.splice(e.target.dataset.id, 1);
+						render();
+						localStorage.setItem('initData', JSON.stringify(arr));
+						if (arr.length == 0) localStorage.removeItem('initData')
+					}
+				}
+			}
+		})
+		
+		const clear = document.querySelector('.clear');
+		clear.addEventListener('click', function(e) {
+			e.preventDefault();
+			if (confirm('您确定要清空全部日志嘛？（清空后无法进行恢复！！）')) {
+				if (confirm('再次确定您是否要清空？')) {
+					arr.splice(0);
+					render();
+					localStorage.removeItem('initData');
+				}
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+    创建Vue实例，初始化渲染
+    1. 准备容器（Vue所管理的范围）
+    2. 引包
+    3. 创建实例
+    4. 添加配置项 => 完成渲染
+  -->
+  <div id="app">
+    <h1>{{ msg }}</h1>
+    <a href="#">{{ count }}</a>
+  </div>
+
+  <script src="./vue.js"></script>
+
+  <script>
+    const app = new Vue({
+      //通过 el 配置选择器，指定 Vue 管理的是哪个盒子
+      el: '#app',
+      data: {
+        msg: 'Hello 黑马',
+        count: 666
+      }
+    })
+  </script>
+</body>
+
+</html>

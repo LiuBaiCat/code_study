@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>LunBoTu</title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			.fs_col2 {
+				width: 590px;
+				background: grey;
+				margin-left: 10px;
+				position: relative;
+				margin: 10px auto;
+			}
+
+			.banner_cir {
+				bottom: 20px;
+				left: 40%;
+				position: absolute;
+			}
+
+			.banner_cir li {
+				width: 10px;
+				height: 10px;
+				border-radius: 100px;
+				border: 1px solid rgba(255, 255, 255, 0.5);
+				float: left;
+				margin-left: 2px;
+			}
+
+			ul {
+				list-style-type: none;
+				cursor: pointer;
+			}
+
+			a img {
+				margin: 10px;
+				cursor: default;
+			}
+
+			.imga {
+				position: relative;
+				display: block;
+				cursor: default;
+			}
+
+			.prev,
+			.next {
+				text-decoration: none;
+				line-height: 35px;
+				font-size: 20px;
+				text-align: center;
+				color: white;
+				width: 35px;
+				height: 35px;
+				background: rgb(0, 0, 0, 0.5);
+				border-radius: 18px;
+				top: 50%;
+				position: absolute;
+			}
+
+			.prev {
+				left: 2%;
+			}
+
+			.next {
+				right: 2%;
+			}
+
+			.active {
+				background: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="fs_col2">
+			<a href=""><img src="./images/01.jpg" alt="" id="img"></a>
+			<ul class="banner_cir">
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<a href="#" class="prev">&lt;</a>
+			<a href="#" class="next">&gt;</a>
+		</div>
+		<script>
+			addEventListener('DOMContentLoaded', () => {
+				let img1 = document.getElementById('img');
+				let prevbanner = document.querySelector('.prev');
+				let nextbanner = document.querySelector('.next');
+				let tulist = document.querySelectorAll('.banner_cir>li');
+				let imgarr = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg',
+					'10.jpg'
+				];
+
+				//设置路径
+				let k = 0;
+
+				function imgadd() {
+					for (let kk = 0; kk < imgarr.length; kk++) {
+						tulist[kk].className = ""
+					}
+					img1.src = './images/' + imgarr[k];
+					tulist[k].className = "active"
+				}
+
+				function pd() {
+					if (k > imgarr.length - 1) {
+						k = 0;
+					}
+					imgadd();
+					k++;
+				}
+				// pd();
+				setInterval(pd, 1000);
+
+				//设置左按钮
+				prevbanner.addEventListener('click', (e) => {
+					e.preventDefault();
+					k--;
+					if (k < 0) {
+						k = imgarr.length - 1;
+					}
+					imgadd();
+				})
+				//设置右按钮
+				nextbanner.addEventListener('click', (e) => {
+					e.preventDefault();
+					k++;
+					if (k > imgarr.length - 1) {
+						k = 0;
+					}
+					imgadd();
+				})
+				//小圆按钮设置
+
+				for (let s = 0; s < imgarr.length; s++) {
+					tulist[s].addEventListener('click', () => {
+						k = s;
+						imgadd();
+					})
+				}
+			})
+		</script>
+	</body>
+</html>

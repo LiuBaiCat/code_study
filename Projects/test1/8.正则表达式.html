@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>正则测试</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.title {
+				text-align: center;
+				height: 42px;
+			}
+
+			.content {
+				display: flex;
+				justify-content: center;
+			}
+
+			.input,
+			.inputRead {
+				width: 600px;
+				height: 100px;
+				margin-top: 20px;
+				border-radius: 4px;
+				outline: 0;
+				border: 1px solid #999;
+				resize: none;
+			}
+
+			#out1,
+			#out2 {
+				white-space: pre;
+				overflow: auto;
+				background: #dcdcdb;
+			}
+
+			.right {
+				margin-left: 30px;
+				height: 440px;
+				width: 300px;
+				padding-top: 20px;
+				padding-left: 20px;
+				line-height: 30px;
+				font-size: 20px;
+				font-weight: 600;
+			}
+
+			a {
+				color: #6f6f70;
+				text-decoration: none;
+			}
+
+			a:hover {
+				color: #184f6a;
+			}
+
+			.highlight {
+				background-color: yellow;
+			}
+
+			.replacelight {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="title">
+				<h1 style="color: #7d7877;">正则表达式测试工具</h1>
+			</div>
+			<div class="content">
+				<div class="left">
+					<!-- <input type="text" class="input" value="tom好好学习,天天study向上TOM"/> -->
+					<textarea class="input" id="" cols="30" rows="10">tom好好学习,天天study向上TOM</textarea>
+					<br><br>
+					正则表达式：<input type="text" class="search" />
+					<input type="checkbox" id="isLower" />忽略大小写
+					<input type="checkbox" id="isGlobal" />全局匹配
+					<input type="checkbox" id="isM" />多行匹配
+					<button onclick="SearchLight()">测试匹配</button>
+					<br>
+					<div class="inputRead" id="out1"></div>
+					<br><br>
+					替换文本：<input type="text" class="replace" /><button onclick="ReplaceText()">替换</button>
+					<br>
+					<div class="inputRead" id="out2"></div>
+				</div>
+				<div class="right inputRead">
+					<a href="javascript:void(0);">常用正则表达式</a><br>
+					<a href="javascript:void(0);">匹配中文字符</a><br>
+					<a href="javascript:void(0);">QQ</a><br>
+					<a href="javascript:void(0);">匹配中文字符</a><br>
+					<a href="javascript:void(0);">匹配中文字符</a><br>
+					<a href="javascript:void(0);">匹配中文字符</a><br>
+					<a href="javascript:void(0);">匹配中文字符</a><br>
+					<a href="javascript:void(0);">匹配中文字符</a><br>
+					<a href="javascript:void(0);">匹配中文字符</a><br>
+					<a href="javascript:void(0);">匹配中文字符</a><br>
+					<a href="javascript:void(0);">匹配中文字符</a><br>
+					<a href="javascript:void(0);">匹配中文字符</a><br>
+					<a href="javascript:void(0);">匹配中文字符</a><br>
+				</div>
+			</div>
+		</div>
+		<script>
+			function SearchLight() {
+				const inputText = document.querySelector('.input').value;
+				const searchInput = document.querySelector('.search').value;
+				const out1 = document.querySelector('#out1');
+				out1.innerHTML = '';
+				// console.log(inputText);
+				// console.log(out1);
+				// 'g'表示全局，'i'表示不区分大小写,'m'是多行multiline
+				const isLower = document.querySelector('#isLower').checked;
+				const isGlobal = document.querySelector('#isGlobal').checked;
+				const isM = document.querySelector('#isM').checked;
+				const flags = `${isLower ? 'i' : ''}${isGlobal ? 'g' : ''}${isM ? 'm' : ''}`;
+				const regex = new RegExp(searchInput, flags);
+				// console.log(regex);
+				const highlightedText = inputText.replace(regex, match => `<span class="highlight">${match}</span>`);
+				out1.innerHTML = highlightedText;
+			}
+
+			function ReplaceText() {
+				const inputText = document.querySelector('.input').value;
+				const searchInput = document.querySelector('.search').value;
+				const replaceInput = document.querySelector('.replace').value;
+				const out2 = document.querySelector('#out2');
+				out2.innerHTML = '';
+				// const regex = new RegExp(replaceInput);
+				const isLower = document.querySelector('#isLower').checked;
+				const isGlobal = document.querySelector('#isGlobal').checked;
+				const isM = document.querySelector('#isM').checked;
+				const flags = `${isLower ? 'i' : ''}${isGlobal ? 'g' : ''}${isM ? 'm' : ''}`;
+				const regex = new RegExp(searchInput, flags);
+				// let match = replaceInput;
+				const replacedText = inputText.replace(regex, match => {
+					match = replaceInput;
+					// console.log(match);
+					return `<span class="replacelight">${match}</span>`
+				});
+				out2.innerHTML = replacedText;
+			}
+		</script>
+	</body>
+</html>

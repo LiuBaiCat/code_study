@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CaiDan</title>
+		<style>
+			.head {
+				align-items: center;
+				background: blue;
+				color: rgb(255, 255, 255);
+				height: 60px;
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+			}
+
+			.head ul {
+				display: flex;
+				list-style: none;
+				text-align: center;
+				height: 60px;
+				position: absolute;
+			}
+
+			.head li {
+				display: inline-block;
+				cursor: pointer;
+				line-height: 60px;
+				width: 120px;
+				font-size: 20px;
+				z-index: 3;
+			}
+			.head li:nth-child(1) {
+				background: red;
+			}
+
+			.head li:nth-child(2):hover~.layer {
+				left: 120px;
+			}
+
+			.head li:nth-child(3):hover~.layer {
+				left: 240px;
+			}
+
+			.head li:nth-child(4):hover~.layer {
+				left: 360px;
+			}
+
+			.head li:nth-child(5):hover~.layer {
+				left: 480px;
+			}
+
+			.head li:nth-child(6):hover~.layer {
+				left: 600px;
+			}
+
+			.head li:nth-child(7):hover~.layer {
+				left: 720px;
+			}
+
+			.head li:nth-child(8):hover~.layer {
+				left: 840px;
+			}
+
+			.layer {
+				width: 120px;
+				height: 60px;
+				background: red;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				margin-left: 40px;
+				transition: all 0.5s;
+				z-index: 2;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<ul>
+				<li>菜单1</li>
+				<li>菜单2</li>
+				<li>菜单3</li>
+				<li>菜单4</li>
+				<li>菜单5</li>
+				<li>菜单6</li>
+				<li>菜单7</li>
+				<li>菜单8</li>
+				<div class="layer"></div>
+			</ul>
+		</div>
+	</body>
+</html>

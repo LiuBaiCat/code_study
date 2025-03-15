@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/main-col4.css">
+    <link rel="stylesheet" href="./css/miaosha.css">
+</head>
+<body>
+    <div class="miaoshatime">
+        <div class="jdmsv"><h1>京东秒杀</h1></div>
+        <div class="countdown-text"><strong>18:30</strong>点场 距结束</div>
+        <div class="countdown-second">
+            <span id="hour">NaN</span>&nbsp;:
+            <span id="minutes">NaN</span>&nbsp;:
+            <span id="second">NaN</span>
+        </div>
+    </div>
+    <script>
+        const date = new Date();
+        const year = date.getFullYear();
+        const mon = date.getMonth() + 1;
+        const day = date.getDate();
+
+        function getCountTime(){
+            
+        //1.得到当前时间戳
+        const now = +new Date();
+
+        //2.得到将来的时间戳
+        const last = +new Date(`${year}-${mon}-${day + 1} 18:30:00`);
+
+        //3.得到剩余时间戳
+        const count = (last - now) / 1000;//总秒数
+
+        //4.转换为时分秒
+        // let d = parseInt(count / 60 / 60 / 24);//计算天数
+        let h = parseInt(count / 60 / 60 % 24);//计算小时
+        h = h < 10 ? '0' + h : h;
+        let m = parseInt(count / 60 % 60);//计算分数
+        m = m < 10 ? '0' + m : m;
+        let s = parseInt(count % 60);//计算秒数
+        s = s < 10 ? '0' + s : s;
+
+        //5.把时分秒写到对应的盒子里面
+        const hour = document.querySelector('#hour');
+        const minutes = document.querySelector('#minutes');
+        const second = document.querySelector('#second');
+        hour.innerHTML = h;
+        minutes.innerHTML = m;
+        second.innerHTML = s;
+        }
+        getCountTime();
+        setInterval(getCountTime,1000);
+    </script>
+</body>
+</html>

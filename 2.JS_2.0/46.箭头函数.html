@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const fn = function fn(){
+        //     console.log(123);
+        // }
+
+        // const fn = () => {
+        //     console.log(123);
+        // }
+        // fn();
+
+        // const fn = (x) => {
+        //     console.log(x);
+        // }
+        // fn(1);
+
+        //只有一个形参的时候，才能省略小括号
+        //只有一行代码的时候，可以省略大括号
+
+            // const fn = x => x + x;
+            // console.log(fn(1));
+            //为 2（不用加return）
+
+        // const form = document.querySelector('form');
+        // form.addEventListener('click',ev => ev.preventDefault());
+
+        //可以直接返回一个对象
+        const fn = uname => ({name: uname});
+        // fn('刘德华');
+        console.log(fn('刘德华'));
+    </script>
+</body>
+</html>

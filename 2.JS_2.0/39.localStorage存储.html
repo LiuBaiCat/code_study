@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //***localStorage
+
+        //***存储为字符串类型
+
+        //***sessionStorage与localStorage基本相同;
+        //***但生命周期为关闭浏览器窗口
+
+        // //#####-----1.要存储一个名字 uname, pink老师-----###########
+        // // localStorage.setItem(键，值)
+        // localStorage.setItem('uname','pink老师');
+
+        // //########---------2.获取方式----------###########
+        // // localStorage.getItem(键)
+        // console.log(localStorage.getItem('uname'));
+
+        // //########---------3.删除本地存储----------###########
+        // localStorage.removeItem('uname');
+        // console.log(localStorage.getItem('uname'));
+        
+        // //########---------3.改----------###########
+        // localStorage.setItem('uname','red老师');
+        // console.log(localStorage.getItem('uname'));
+
+        const obj = {
+            uname: 'pink老师',
+            age: 18,
+            gender: '男'
+        }
+        // localStorage.setItem('obj',obj);                 X 错误的
+        // console.log(localStorage.getItem('obj'));        X 错误的
+
+        localStorage.setItem('obj',JSON.stringify(obj));
+        console.log(JSON.parse(localStorage.getItem('obj')));
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>拖拽API</title>
+		<style>
+			.fileBox {
+				width: 300px;
+				height: 300px;
+				border: 1px solid #000;
+				overflow: hidden;
+				flex-wrap: wrap;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				float: left;
+			}
+
+			.fileItem {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100px;
+				height: 100px;
+				background: url(./images/folder.png) no-repeat center;
+				margin: 10px;
+				user-select: none;
+				/* 禁止 div 中的文本被鼠标选中 */
+			}
+
+			.delBox {
+				float: left;
+				position: relative;
+			}
+
+			.delImg {
+				width: 300px;
+				height: 300px;
+				background: url(./images/recycle.jpg) no-repeat center;
+			}
+
+			.delBox .fileItem {
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>拖拽API - 回收站</h1>
+		<hr />
+		<div class="fileBox">
+			<div class="fileItem" draggable="true">文件1</div>
+			<div class="fileItem" draggable="true">文件2</div>
+			<div class="fileItem" draggable="true">文件3</div>
+			<div class="fileItem" draggable="true">文件4</div>
+		</div>
+		<div class="delBox">
+			<div class="delImg">&nbsp;</div>
+		</div>
+	</body>
+	<script>
+		const items = document.querySelectorAll('.fileItem');
+		const delBox = document.querySelector('.delImg');
+		let dragItem = null;
+		items.forEach(item => {
+			item.addEventListener('dragstart', function(e) {
+				dragItem = item;
+				console.log('开始拖拽');
+			});
+			item.addEventListener('dragend', function(e) {
+				dragItem = null;
+				console.log('拖拽结束');
+			});
+		});
+		delBox.addEventListener('dragover', function(e) {
+			e.preventDefault();
+		});
+		delBox.addEventListener('drop', function(e) {
+			delBox.appendChild(dragItem);
+			console.log('拖拽完成');
+		});
+	</script>
+</html>
